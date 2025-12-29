@@ -85,7 +85,7 @@ with col1:
 with col2:
     reset_btn = st.button("🔁 Reset Form Input")
 with col3:
-    history_btn = st.button("📊 Lihat Riwayat Prediksi (jika ada)")
+    history_btn = st.button("📊 Lihat Riwayat Prediksi")
 
 # === Reset Form ===
 if reset_btn:
@@ -162,3 +162,4 @@ if history_btn:
             )
     else:
         st.info("Belum ada riwayat prediksi yang tersimpan.")
+
