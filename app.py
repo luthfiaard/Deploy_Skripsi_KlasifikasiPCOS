@@ -25,7 +25,7 @@ feature_info = {
     "Skin darkening (Y/N)": {"desc": "Apakah terdapat penggelapan kulit", "range": "Pilih: Tidak (0) / Ya (1)"},
     "Weight gain(Y/N)": {"desc": "Apakah terjadi peningkatan berat badan", "range": "Pilih: Tidak (0) / Ya (1)"},
     "hair growth(Y/N)": {"desc": "Apakah terjadi pertumbuhan rambut berlebih", "range": "Pilih: Tidak (0) / Ya (1)"},
-    "Cycle(R/I)": {"desc": "Tipe siklus menstruasi", "range": "Pilih: Regular = Teratur (0) atau Irregular = Tidak Teratur (1)"},
+    "Cycle(R/I)": {"desc": "Tipe siklus menstruasi", "range": "Pilih: Regular = Teratur (2) atau Irregular = Tidak Teratur (4)"},
     "AMH(ng/mL)": {"desc": "Masukkan nilai Anti-Müllerian Hormone", "range": "Contoh: 1 - 10"},
     "Cycle length(days)": {"desc": "Panjang siklus menstruasi (hari)", "range": "Contoh: 21 - 35"},
     "FSH(mIU/mL)": {"desc": "Masukkan nilai Follicle-Stimulating Hormone", "range": "Contoh: 3 - 15"},
@@ -48,7 +48,7 @@ for feature in selected_features:
             user_input[feature] = 1.0 if "Ya" in pilihan else 0.0
 
     elif feature == "Cycle(R/I)":
-        pilihan = st.selectbox(feature, ["Pilih...", "Regular = Teratur (0)", "Irregular = Tidak Teratur (1)"], label_visibility="collapsed", key=feature)
+        pilihan = st.selectbox(feature, ["Pilih...", "Regular = Teratur (2)", "Irregular = Tidak Teratur (4)"], label_visibility="collapsed", key=feature)
         if pilihan == "Pilih...":
             user_input[feature] = None
         else:
@@ -165,6 +165,7 @@ if history_btn:
         st.dataframe(hist_df, use_container_width=True)
     else:
         st.info("Belum ada riwayat prediksi yang tersimpan.")
+
 
 
 
