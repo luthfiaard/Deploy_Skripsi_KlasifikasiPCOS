@@ -114,16 +114,16 @@ if pred_btn:
                 f"<h3 style='text-align:center;'>Probabilitas: {probabilities[1]:.2%}</h3>",
                 unsafe_allow_html=True
             )
-            rekomendasi = "Sistem menyarankan untuk melakukan **konsultasi ke dokter spesialis kandungan** "
-            "untuk pemeriksaan lebih lanjut."
+            rekomendasi = ("Sistem menyarankan untuk melakukan **konsultasi ke dokter spesialis kandungan** "
+            "untuk pemeriksaan lebih lanjut.")
         else:
             st.markdown(
                 f"<h2 style='text-align:center;color:#2E8B57;'>💡 Hasil: Tidak PCOS</h2>"
                 f"<h3 style='text-align:center;'>Probabilitas: {probabilities[0]:.2%}</h3>",
                 unsafe_allow_html=True
             )
-            rekomendasi = "Tetap jaga pola hidup sehat dan lakukan pemeriksaan rutin. "
-            "Segera konsultasi ke dokter apabila muncul keluhan lain."
+            rekomendasi = ("Tetap jaga pola hidup sehat dan lakukan pemeriksaan rutin. "
+            "Segera konsultasi ke dokter apabila muncul keluhan lain.")
 
         st.info(f"🧾 **Rekomendasi Sistem:** {rekomendasi}")
         st.caption("⚠️ Sistem ini hanya berfungsi sebagai alat bantu prediksi, bukan diagnosis medis.")
@@ -162,4 +162,8 @@ if history_btn:
             )
     else:
         st.info("Belum ada riwayat prediksi yang tersimpan.")
+        
+st.write("Working directory:", os.getcwd())
+st.write("File CSV ada:", os.path.exists(HISTORY_FILE))
+
 
